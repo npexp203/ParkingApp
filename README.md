@@ -69,11 +69,11 @@ mvn javafx:run
 ![Main Interface](media/Main_screen.png)
 
 ### Plate Scan
-![](screenshots/ScanTicket.png)
+![](media/ScanTicket.png)
 
 ### Vehicle List
-![Vehicle List](screenshots/List.png)
+![Vehicle List](media/List.png)
 
 ### Vehicle out
-![Vehicle Out](screenshots/out.png)
+![Vehicle Out](media/out.png)
 
