@@ -1,0 +1,142 @@
+@startuml
+
+' --- Model Layer (within a rectangle) ---
+package "Model" {
+    class Vehicle {
+        -String licensePlate
+        -Date entryTime
+        -String vehicleId
+    }
+
+    class VehicleDTO {
+        -String licensePlate
+        -Date entryTime
+        -String vehicleId
+    }
+
+    class VehicleDAO {
+        +addVehicle(vehicleDTO: VehicleDTO)
+        +removeVehicle(vehicleId: String)
+        +getVehicle(vehicleId: String): VehicleDTO
+        +getAllVehicles(): List<VehicleDTO>
+    }
+
+    class VehicleRepository {
+        -VehicleDAO vehicleDAO
+        +addVehicle(vehicleDTO: VehicleDTO)
+        +removeVehicle(vehicleId: String)
+        +getVehicle(vehicleId: String): VehicleDTO
+        +getAllVehicles(): List<VehicleDTO>
+    }
+
+    class Ticket {
+        -String licensePlate
+        -Date entryTime
+        -String vehicleId
+        +generateTicket(): String
+    }
+    Class ParkingFeeCalculator{
+        -double Rate_Per_Hour
+        +calculateDurationInMinutes(): long
+        +calculateFee(): double
+    }
+    Class RepositoryException{
+        +RepositoryException(message: String, cause: Throwable)
+    }
+}
+
+' --- Controller Layer (within a rectangle) ---
+package "Controller" {
+    class VehicleController {
+        +addVehicleToParking(vehicleDTO: VehicleDTO)
+        +removeVehicleFromParking(vehicleId: String)
+        +generateTicket(vehicleId: String): Ticket
+        +calculateParkingPrice(entryTime: Date, exitTime: Date): double
+    }
+
+    class ScanPlateController {
+        +scanPlate(): VehicleDTO
+    }
+
+    class PriceController {
+        +calculatePrice(entryTime: Date, exitTime: Date): double
+    }
+
+
+     class MainController {
+        +initialize()
+        +goToScan(ActionEvent event)
+        +goToVehicleList(ActionEvent actionEvent)
+        +goToCheckout(ActionEvent actionEvent)
+        +exitApp(ActionEvent actionEvent)
+    }
+
+    class ScanTicketController {
+        +initialize()
+        +scanTicket(ActionEvent actionEvent)
+        +saveEntry(ActionEvent actionEvent)
+        +goBack(ActionEvent actionEvent)
+    }
+
+    class VehicleListController {
+        +initialize()
+        +goBack(ActionEvent actionEvent)
+    }
+
+    class CheckoutController {
+        +initialize()
+        +calculateFee(ActionEvent actionEvent)
+        +processExit(ActionEvent actionEvent)
+        +goBack(ActionEvent actionEvent)
+    }
+
+    class ReceiptController {
+        +initialize()
+        +goBack(ActionEvent actionEvent)
+    }
+}
+
+' --- View Layer (within a rectangle) ---
+package "View" {
+    class MainView {
+        +FXML file MainView.fxml
+    }
+
+    class ScanTicketView {
+        +FXML file ScanTicketView.fxml
+    }
+
+    class VehicleListView {
+        +FXML file VehicleListView.fxml
+    }
+
+    class CheckoutView {
+        +FXML file CheckoutView.fxml
+    }
+
+    class ReceiptView {
+        +FXML file ReceiptView.fxml
+    }
+
+    
+}
+class Main{}
+
+VehicleRepository --> VehicleDAO 
+Vehicle --> VehicleDTO 
+VehicleDTO --> VehicleRepository
+VehicleController --> VehicleRepository 
+VehicleController --> VehicleListController 
+VehicleController --> ScanPlateController 
+VehicleController --> CheckoutController 
+ScanPlateController --> VehicleController
+ScanPlateController --> VehicleDTO 
+PriceController --> ParkingFeeCalculator 
+VehicleController --> Ticket 
+CheckoutController --> ParkingFeeCalculator 
+MainController --> ScanTicketController 
+MainController --> VehicleListController 
+MainController --> CheckoutController 
+MainController --> ReceiptController 
+
+@enduml
