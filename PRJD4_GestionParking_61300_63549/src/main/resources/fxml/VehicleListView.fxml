@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="be.esi.prj.view.VehicleListController"
+            style="-fx-background-color: #FAFAFA;">
+
+    <VBox spacing="20" alignment="TOP_CENTER"
+          AnchorPane.topAnchor="20" AnchorPane.leftAnchor="20"
+          AnchorPane.rightAnchor="20" AnchorPane.bottomAnchor="20"
+          style="-fx-padding: 10;">
+
+        <HBox spacing="10" alignment="CENTER">
+            <ImageView fitWidth="50" fitHeight="50" preserveRatio="true">
+                <image>
+                    <Image url="@/pFlowPark.png"/>
+                </image>
+            </ImageView>
+            <Label text="Véhicules en Parking"
+                   style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #222;"/>
+        </HBox>
+
+        <BorderPane style="-fx-background-color: white; -fx-border-color: #DDD; -fx-border-radius: 8px; -fx-background-radius: 8px;">
+            <center>
+                <TableView fx:id="vehicleTable" prefHeight="400"
+                           style="-fx-font-size: 13px;">
+                    <columns>
+                        <TableColumn fx:id="plateColumn" text="Plaque" prefWidth="150"/>
+                        <TableColumn fx:id="timeColumn" text="Entrée" prefWidth="150"/>
+                        <TableColumn fx:id="exitColumn" text="Sortie prévue" prefWidth="150"/>
+                    </columns>
+                </TableView>
+            </center>
+        </BorderPane>
+
+        <HBox alignment="CENTER_RIGHT">
+            <Button text="Retour"
+                    onAction="#goBack"
+                    style="-fx-background-color: #E53935; -fx-text-fill: white;"
+                    prefWidth="120"/>
+        </HBox>
+    </VBox>
+</AnchorPane>

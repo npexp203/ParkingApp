@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="be.esi.prj.view.ReceiptController"
+            style="-fx-background-color: #FAFAFA;">
+
+    <VBox alignment="CENTER" spacing="15"
+          AnchorPane.topAnchor="30.0"
+          AnchorPane.leftAnchor="0"
+          AnchorPane.rightAnchor="0">
+
+        <!-- Logo FlowPark -->
+        <ImageView fitHeight="50" fitWidth="50" preserveRatio="true">
+            <image>
+                <Image url="@/pFlowPark.png" />
+            </image>
+        </ImageView>
+
+        <Label text="Reçu de Paiement"
+               style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #222;" />
+
+        <Label fx:id="receiptLabel"
+               style="-fx-font-size: 14px; -fx-background-color: #F1F1F1; -fx-padding: 10px; -fx-border-radius: 5px; -fx-background-radius: 5px; -fx-border-color: #CCC;"
+               wrapText="true" maxWidth="300"/>
+
+        <Button text="Retour" onAction="#goBack"
+                style="-fx-background-color: #E53935; -fx-text-fill: white; -fx-font-size: 14px; -fx-pref-width: 200px;" />
+    </VBox>
+</AnchorPane>

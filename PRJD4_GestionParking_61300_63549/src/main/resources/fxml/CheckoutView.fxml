@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="be.esi.prj.view.CheckoutController"
+            style="-fx-background-color: #FAFAFA;">
+
+    <VBox spacing="20" alignment="TOP_CENTER"
+          AnchorPane.topAnchor="20" AnchorPane.leftAnchor="20"
+          AnchorPane.rightAnchor="20" AnchorPane.bottomAnchor="20">
+
+        <ImageView fitWidth="60" fitHeight="60" preserveRatio="true">
+            <image>
+                <Image url="@/pFlowPark.png" />
+            </image>
+        </ImageView>
+        <Label text="Check-Out" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+        <HBox spacing="10" alignment="CENTER">
+            <Button fx:id="btnChooseImg" onAction="#chooseImage"
+                    text="Choisir image"
+                    style="-fx-background-color: #4285F4; -fx-text-fill: white;"
+                    prefWidth="140"/>
+            <Button fx:id="scanPlateButton" onAction="#scanTicket"
+                    text="Scanner"
+                    style="-fx-background-color: #34A853; -fx-text-fill: white;"
+                    prefWidth="140"/>
+        </HBox>
+        <Label fx:id="imagePathLabel" text="Aucun fichier sélectionné ou drag and drop ICI"
+               style="-fx-text-fill: #666;" wrapText="true"/>
+
+        <GridPane hgap="10" vgap="12">
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" percentWidth="40"/>
+                <ColumnConstraints halignment="LEFT"  percentWidth="60"/>
+            </columnConstraints>
+
+            <Label text="Plaque détectée :" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <Label fx:id="detectedPlateLabel" text="—"
+                   GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="Arrivée :" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <Label fx:id="entryTimeLabel" text="—"
+                   GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <Label text="Sortie prévue :" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <Label fx:id="plannedExitLabel" text="—"
+                   GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+            <Label text="Départ (YYYY-MM-DD HH:mm) :" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <TextField fx:id="departureField" promptText="2025-05-10 14:30"
+                       GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+        </GridPane>
+
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Button onAction="#onCalculateFee"
+                    text="Calculer tarif"
+                    style="-fx-background-color: #34A853; -fx-text-fill: white;"
+                    prefWidth="140"/>
+            <Label fx:id="feeLabel" text="Montant à payer : —"
+                   style="-fx-text-fill: #333;"/>
+        </HBox>
+
+        <HBox spacing="15" alignment="CENTER">
+            <Button onAction="#onProcessExit"
+                    text="Valider et sortir"
+                    style="-fx-background-color: #34A853; -fx-text-fill: white;"
+                    prefWidth="140"/>
+            <Button onAction="#goBack"
+                    text="Retour"
+                    style="-fx-background-color: #E53935; -fx-text-fill: white;"
+                    prefWidth="140"/>
+        </HBox>
+    </VBox>
+</AnchorPane>

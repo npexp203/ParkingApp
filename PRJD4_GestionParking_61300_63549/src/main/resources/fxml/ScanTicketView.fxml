@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="be.esi.prj.view.ScanTicketController"
+            style="-fx-background-color: #FAFAFA;">
+
+    <VBox spacing="20" alignment="TOP_CENTER"
+          AnchorPane.topAnchor="20" AnchorPane.leftAnchor="20"
+          AnchorPane.rightAnchor="20" AnchorPane.bottomAnchor="20"
+          style="-fx-padding: 10;">
+
+        <ImageView fitWidth="60" fitHeight="60" preserveRatio="true">
+            <image>
+                <Image url="@/pFlowPark.png"/>
+            </image>
+        </ImageView>
+        <Label text="Scanner une plaque"
+               style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+        <HBox spacing="10" alignment="CENTER">
+            <Button onAction="#chooseImage"
+                    text="Choisir image"
+                    style="-fx-background-color: #4285F4; -fx-text-fill: white;"
+                    prefWidth="140"/>
+            <Button onAction="#scanTicket"
+                    text="Scanner"
+                    style="-fx-background-color: #34A853; -fx-text-fill: white;"
+                    prefWidth="140"/>
+        </HBox>
+        <Label fx:id="imagePathLabel"
+               text="Aucun fichier sélectionné ou drag and drop ICI"
+               style="-fx-text-fill: #666;" wrapText="true"/>
+
+        <GridPane hgap="10" vgap="12">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="40" halignment="RIGHT"/>
+                <ColumnConstraints percentWidth="60" halignment="LEFT"/>
+            </columnConstraints>
+
+            <Label text="Résultat OCR :" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="plateNumberField"
+                       promptText="Numéro de plaque"
+                       prefWidth="200"
+                       GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="Heure d’arrivée :" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="entryTimeField"
+                       promptText="YYYY-MM-DD HH:mm"
+                       prefWidth="200"
+                       GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <Label text="Sortie prévue :" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <TextField fx:id="exitTimeField"
+                       promptText="YYYY-MM-DD HH:mm"
+                       prefWidth="200"
+                       GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+        </GridPane>
+
+        <HBox spacing="15" alignment="CENTER">
+            <Button text="Enregistrer"
+                    onAction="#saveEntry"
+                    style="-fx-background-color: #34A853; -fx-text-fill: white;"
+                    prefWidth="140"/>
+            <Button text="Retour"
+                    onAction="#goBack"
+                    style="-fx-background-color: #E53935; -fx-text-fill: white;"
+                    prefWidth="140"/>
+        </HBox>
+    </VBox>
+</AnchorPane>

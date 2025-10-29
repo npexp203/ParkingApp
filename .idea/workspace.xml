@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ed19a917-cb66-4d34-93ee-5f21e8b1a956" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PRJD4_GestionParking_61300_63549/data-out/VehiclePhotos/images (1).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PRJD4_GestionParking_61300_63549/data-out/VehiclePhotos/texte.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PRJD4_GestionParking_61300_63549/data-out/parking.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PRJD4_GestionParking_61300_63549/data-out/parkingDB/vehicleDB.db" beforeDir="false" afterPath="$PROJECT_DIR$/PRJD4_GestionParking_61300_63549/data-out/parkingDB/vehicleDB.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PRJD4_GestionParking_61300_63549/src/main/java/be/esi/prj/view/CheckoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/PRJD4_GestionParking_61300_63549/src/main/java/be/esi/prj/view/CheckoutController.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2v4lADW10f1UMFupqi166XvVSEn" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/duran/Desktop/4prj1d-d112/PRJD4_GestionParking_61300_63549",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ed19a917-cb66-4d34-93ee-5f21e8b1a956" name="Changes" comment="" />
+      <created>1743412082030</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1743412082030</updated>
+      <workItem from="1758308061597" duration="14000" />
+      <workItem from="1761779767538" duration="92000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
